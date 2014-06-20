@@ -1,0 +1,4 @@
+language: objective-c
+before_install: rake setup
+script:
+- rake test
