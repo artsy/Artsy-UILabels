@@ -1,10 +1,12 @@
-pod "Artsy+UILabels", :path => "../"
-  
+target 'LabelsApp' do
+  pod "Artsy+UILabels", :path => "../"
+end
+
 target 'Tests', :exclusive => true do
   pod "Artsy+UILabels", :path => "../"
 
   pod 'Specta'
-pod 'Expecta'
-pod 'FBSnapshotTestCase'
-pod 'EXPMatchers+FBSnapshotTest'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'EXPMatchers+FBSnapshotTest'
 end
