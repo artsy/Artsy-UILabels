@@ -10,7 +10,7 @@ To run the example project; clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-Artsy+UIColors is available through [CocoaPods](http://cocoapods.org), and the [Artsy Specs Repo](https://github.com/artsy/specs). 
+Artsy+UILabels is available through [CocoaPods](http://cocoapods.org), and the [Artsy Specs Repo](https://github.com/artsy/specs). 
 
 To install the Specs repo run:
 
