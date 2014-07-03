@@ -117,7 +117,8 @@ static const CGSize ChevronSize = { 8, 13 };
     self.font = [UIFont sansSerifFontWithSize:self.font.pointSize];
 }
 
-- (void)setText:(NSString *)text {
+- (void)setText:(NSString *)text
+{
     [super setText:text.uppercaseString];
 }
 
@@ -125,18 +126,24 @@ static const CGSize ChevronSize = { 8, 13 };
 
 @implementation ARItalicsSerifLabelWithChevron
 
+- (void)setup
+{
+    [super setup];
+    self.font = [UIFont serifItalicFontWithSize:self.font.pointSize];
+}
+
 @end
 
-@implementation ARArtworkTitleLabel
+@implementation ARTitleWithDateLabel
 
-- (void)setTitle:(NSString *)artworkTitle date:(NSString *)date;
+- (void)setTitle:(NSString *)title date:(NSString *)date
 {
-    NSAssert(artworkTitle, @"Artwork With no title given to an ARArtworkTitleLabel");
+    NSAssert(title, @"Missing title.");
 
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:3];
 
-    NSMutableAttributedString *titleAndDate = [[NSMutableAttributedString alloc] initWithString:artworkTitle attributes:@{
+    NSMutableAttributedString *titleAndDate = [[NSMutableAttributedString alloc] initWithString:title attributes:@{
         NSParagraphStyleAttributeName: paragraphStyle
     }];
 
@@ -156,6 +163,7 @@ static const CGSize ChevronSize = { 8, 13 };
 @end
 
 @interface ARSerifLineHeightLabel()
+
 @end
 
 @implementation ARSerifLineHeightLabel

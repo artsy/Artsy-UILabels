@@ -2,10 +2,10 @@ Pod::Spec.new do |s|
   s.name             = "Artsy+UILabels"
   s.version          = "1.0.0"
   s.summary          = "UILabels subclasses and related categories."
-  s.homepage         = "https://github.com/artsy/Artsy+UILabels"
+  s.homepage         = "https://github.com/artsy/Artsy-UILabels"
   s.license          = 'MIT'
   s.author           = { "Orta" => "orta.therox@gmail.com" }
-  s.source           = { :git => "https://github.com/artsy/Artsy+UILabels.git" }
+  s.source           = { :git => "https://github.com/artsy/Artsy-UILabels.git" }
   s.social_media_url = 'https://twitter.com/artsy'
 
   s.platform     = :ios, '7.0'

@@ -109,14 +109,14 @@ describe(@"label subclasses", ^{
     });
 
     it(@"ARItalicsSerifLabelWithChevron looks right", ^{
-        label = [[ARItalicsSerifLabel alloc] initWithFrame:labelFrame];
+        label = [[ARItalicsSerifLabelWithChevron alloc] initWithFrame:labelFrame];
         label.text = @"Hello world";
         expect(label).to.haveValidSnapshot();
     });
     
-    it(@"ARArtworkTitleLabel looks right", ^{
-        label = [[ARArtworkTitleLabel alloc] initWithFrame:labelFrame];
-        [(ARArtworkTitleLabel *)label setTitle:@"Hello" date:@"world"];
+    it(@"ARTitleWithDateLabel looks right", ^{
+        label = [[ARTitleWithDateLabel alloc] initWithFrame:labelFrame];
+        [(ARTitleWithDateLabel *)label setTitle:@"Hello" date:@"world"];
         expect(label).to.haveValidSnapshot();
     });
 
@@ -125,7 +125,7 @@ describe(@"label subclasses", ^{
         label.frame = CGRectMake(0, 0, 300, 80);
         label.numberOfLines = 2;
         label.text = @"Hello there, this is some pretty long text ey? Maybe it'll wrap.";
-        expect(label).to.recordSnapshot();
+        expect(label).to.haveValidSnapshot();
     });
 });
 

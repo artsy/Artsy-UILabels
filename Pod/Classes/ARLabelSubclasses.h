@@ -33,7 +33,7 @@
 @interface ARItalicsSerifLabelWithChevron : ARLabelWithChevron
 @end
 
-@interface ARArtworkTitleLabel: ARItalicsSerifLabel
+@interface ARTitleWithDateLabel: ARItalicsSerifLabel
 - (void)setTitle:(NSString *)artworkTitle date:(NSString *)date;
 @end
 
