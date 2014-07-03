@@ -82,9 +82,14 @@ static const CGSize ChevronSize = { 8, 13 };
     self.chevron.frame = CGRectMake(self.intrinsicContentSize.width + 8, yPosition, ChevronSize.width, ChevronSize.height);
 }
 
-- (void)setHidesChevron:(BOOL)hide
+- (void)setChevronHidden:(BOOL)chevronHidden
 {
-    self.chevron.hidden = hide;
+    self.chevron.hidden = chevronHidden;
+}
+
+- (BOOL)chevronHidden
+{
+    return self.chevron.hidden;
 }
 
 @end

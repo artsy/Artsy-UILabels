@@ -72,14 +72,16 @@ describe(@"label subclasses", ^{
         it(@"can change the y offset of the chevron", ^{
             label = [[ARLabelWithChevron alloc] initWithFrame:labelFrame];
             label.text = @"Hello world";
-            [(ARLabelWithChevron *)label setChevronDelta:10];
+            ((ARLabelWithChevron *)label).chevronDelta = 10;
             expect(label).to.haveValidSnapshot();
         });
         
         it(@"can hide the chevron", ^{
             label = [[ARLabelWithChevron alloc] initWithFrame:labelFrame];
             label.text = @"Hello world";
-            [(ARLabelWithChevron *)label setHidesChevron:YES];
+            expect(((ARLabelWithChevron *)label).chevronHidden).to.beFalsy();
+            ((ARLabelWithChevron *)label).chevronHidden = YES;
+            expect(((ARLabelWithChevron *)label).chevronHidden).to.beTruthy();
             expect(label).to.haveValidSnapshot();
         });
     });

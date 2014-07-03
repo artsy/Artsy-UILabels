@@ -11,12 +11,11 @@
 
 @interface ARLabelWithChevron : ARLabel
 @property (nonatomic, assign) CGFloat chevronDelta;
-- (void)setHidesChevron:(BOOL)hide;
+@property (nonatomic, assign) BOOL chevronHidden;
 @end
 
 @interface ARSerifLabel : ARLabel
 @end
-
 
 @interface ARSerifLabelWithChevron : ARLabelWithChevron
 @end
