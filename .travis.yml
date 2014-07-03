@@ -7,7 +7,9 @@ before_script:
   - brew uninstall xctool
   - brew install xctool
 install: 
-  - cd Example ; pod install
+  - pod repo add artsy https://github.com/artsy/Specs.git
+  - cd Example ; pod install; cd ..
 xcode_workspace: Example/Artsy+UILabels.xcworkspace
 xcode_scheme: LabelsApp
+xcode_sdk: iphonesimulator
 
