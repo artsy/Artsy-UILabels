@@ -11,12 +11,11 @@
 
 @interface ARLabelWithChevron : ARLabel
 @property (nonatomic, assign) CGFloat chevronDelta;
-- (void)setHidesChevron:(BOOL)hide;
+@property (nonatomic, assign) BOOL chevronHidden;
 @end
 
 @interface ARSerifLabel : ARLabel
 @end
-
 
 @interface ARSerifLabelWithChevron : ARLabelWithChevron
 @end
@@ -33,19 +32,10 @@
 @interface ARItalicsSerifLabelWithChevron : ARLabelWithChevron
 @end
 
-@interface ARArtworkTitleLabel: ARItalicsSerifLabel
-- (void)setTitle:(NSString *)artworkTitle date:(NSString *)date;
-@end
-
-/// Will convert the text into an attributed string
-/// with the correct line height
-
+/// Will convert the text into an attributed string with the correct line height.
 @interface ARSerifLineHeightLabel : ARSerifLabel
-
 - (instancetype)initWithLineSpacing:(CGFloat)lineHeight;
-
 @property (nonatomic, assign) CGFloat lineHeight;
-
 @end
 
 @interface ARBorderLabel : ARSerifLineHeightLabel

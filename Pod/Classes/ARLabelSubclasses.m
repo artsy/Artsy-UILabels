@@ -56,7 +56,6 @@ static const CGSize ChevronSize = { 8, 13 };
 - (void)setup
 {
     [super setup];
-    self.font = [UIFont sansSerifFontWithSize:14];
     self.chevronDelta = 6;
     self.clipsToBounds = NO;
 }
@@ -82,9 +81,14 @@ static const CGSize ChevronSize = { 8, 13 };
     self.chevron.frame = CGRectMake(self.intrinsicContentSize.width + 8, yPosition, ChevronSize.width, ChevronSize.height);
 }
 
-- (void)setHidesChevron:(BOOL)hide
+- (void)setChevronHidden:(BOOL)chevronHidden
 {
-    self.chevron.hidden = hide;
+    self.chevron.hidden = chevronHidden;
+}
+
+- (BOOL)chevronHidden
+{
+    return self.chevron.hidden;
 }
 
 @end
@@ -117,7 +121,8 @@ static const CGSize ChevronSize = { 8, 13 };
     self.font = [UIFont sansSerifFontWithSize:self.font.pointSize];
 }
 
-- (void)setText:(NSString *)text {
+- (void)setText:(NSString *)text
+{
     [super setText:text.uppercaseString];
 }
 
@@ -125,37 +130,16 @@ static const CGSize ChevronSize = { 8, 13 };
 
 @implementation ARItalicsSerifLabelWithChevron
 
-@end
-
-@implementation ARArtworkTitleLabel
-
-- (void)setTitle:(NSString *)artworkTitle date:(NSString *)date;
+- (void)setup
 {
-    NSAssert(artworkTitle, @"Artwork With no title given to an ARArtworkTitleLabel");
-
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:3];
-
-    NSMutableAttributedString *titleAndDate = [[NSMutableAttributedString alloc] initWithString:artworkTitle attributes:@{
-        NSParagraphStyleAttributeName: paragraphStyle
-    }];
-
-    if (date.length > 0) {
-        NSString *formattedTitleDate = [@", " stringByAppendingString:date];
-        NSAttributedString *andDate = [[NSAttributedString alloc] initWithString:formattedTitleDate attributes:@{
-             NSFontAttributeName : [UIFont serifFontWithSize:16]
-        }];
-        [titleAndDate appendAttributedString:andDate];
-    }
-
-    self.font = [UIFont serifItalicFontWithSize:16];
-    self.numberOfLines = 0;
-    self.attributedText = titleAndDate;
+    [super setup];
+    self.font = [UIFont serifItalicFontWithSize:self.font.pointSize];
 }
 
 @end
 
 @interface ARSerifLineHeightLabel()
+
 @end
 
 @implementation ARSerifLineHeightLabel
@@ -218,5 +202,21 @@ static const CGFloat ARBorderLabelInset = 10;
 @end
 
 @implementation ARSerifLabelWithChevron
+
+- (void)setup
+{
+    [super setup];
+    self.font = [UIFont serifFontWithSize:self.font.pointSize];
+}
+
+@end
+
+@implementation ARSansSerifLabelWithChevron
+
+- (void)setup
+{
+    [super setup];
+    self.font = [UIFont sansSerifFontWithSize:self.font.pointSize];
+}
 
 @end

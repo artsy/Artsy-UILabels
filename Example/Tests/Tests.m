@@ -72,14 +72,16 @@ describe(@"label subclasses", ^{
         it(@"can change the y offset of the chevron", ^{
             label = [[ARLabelWithChevron alloc] initWithFrame:labelFrame];
             label.text = @"Hello world";
-            [(ARLabelWithChevron *)label setChevronDelta:10];
+            ((ARLabelWithChevron *)label).chevronDelta = 10;
             expect(label).to.haveValidSnapshot();
         });
         
         it(@"can hide the chevron", ^{
             label = [[ARLabelWithChevron alloc] initWithFrame:labelFrame];
             label.text = @"Hello world";
-            [(ARLabelWithChevron *)label setHidesChevron:YES];
+            expect(((ARLabelWithChevron *)label).chevronHidden).to.beFalsy();
+            ((ARLabelWithChevron *)label).chevronHidden = YES;
+            expect(((ARLabelWithChevron *)label).chevronHidden).to.beTruthy();
             expect(label).to.haveValidSnapshot();
         });
     });
@@ -92,6 +94,12 @@ describe(@"label subclasses", ^{
 
     it(@"ARSerifLabelWithChevron looks right", ^{
         label = [[ARSerifLabelWithChevron alloc] initWithFrame:labelFrame];
+        label.text = @"Hello world";
+        expect(label).to.haveValidSnapshot();
+    });
+
+    it(@"ARSansSerifLabelWithChevron looks right", ^{
+        label = [[ARSansSerifLabelWithChevron alloc] initWithFrame:labelFrame];
         label.text = @"Hello world";
         expect(label).to.haveValidSnapshot();
     });
@@ -109,23 +117,17 @@ describe(@"label subclasses", ^{
     });
 
     it(@"ARItalicsSerifLabelWithChevron looks right", ^{
-        label = [[ARItalicsSerifLabel alloc] initWithFrame:labelFrame];
+        label = [[ARItalicsSerifLabelWithChevron alloc] initWithFrame:labelFrame];
         label.text = @"Hello world";
         expect(label).to.haveValidSnapshot();
     });
     
-    it(@"ARArtworkTitleLabel looks right", ^{
-        label = [[ARArtworkTitleLabel alloc] initWithFrame:labelFrame];
-        [(ARArtworkTitleLabel *)label setTitle:@"Hello" date:@"world"];
-        expect(label).to.haveValidSnapshot();
-    });
-
-    it(@"ARSerifLineHeightLabel  looks right", ^{
+    it(@"ARSerifLineHeightLabel looks right", ^{
         label = [[ARSerifLineHeightLabel  alloc] initWithLineSpacing:10];
         label.frame = CGRectMake(0, 0, 300, 80);
         label.numberOfLines = 2;
         label.text = @"Hello there, this is some pretty long text ey? Maybe it'll wrap.";
-        expect(label).to.recordSnapshot();
+        expect(label).to.haveValidSnapshot();
     });
 });
 
