@@ -1,5 +1,7 @@
 # Artsy+UILabels
 
+[![Build Status](https://travis-ci.org/artsy/Artsy-UILabels.svg)](https://travis-ci.org/artsy/Artsy-UILabels)
+
 This is our styled UILabel subclasses repo, it relies on the Artsy+UIFonts which is an internal project. You can get a sense of how we do view based tests by checking the tests, and the results.
 
 ## Usage

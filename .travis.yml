@@ -1,4 +1,13 @@
 language: objective-c
-before_install: rake setup
-script:
-- rake test
+before_install: 
+  - gem install cocoapods --no-ri --no-rdoc -v "0.32.1"
+before_script:
+  - export LANG=en_US.UTF-8
+  - brew update
+  - brew uninstall xctool
+  - brew install xctool
+install: 
+  - cd Example ; pod install
+xcode_workspace: Example/Artsy+UILabels.xcworkspace
+xcode_scheme: LabelsApp
+
