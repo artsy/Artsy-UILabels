@@ -116,12 +116,6 @@ describe(@"label subclasses", ^{
         expect(label).to.haveValidSnapshot();
     });
     
-    it(@"ARTitleWithDateLabel looks right", ^{
-        label = [[ARTitleWithDateLabel alloc] initWithFrame:labelFrame];
-        [(ARTitleWithDateLabel *)label setTitle:@"Hello" date:@"world"];
-        expect(label).to.haveValidSnapshot();
-    });
-
     it(@"ARSerifLineHeightLabel  looks right", ^{
         label = [[ARSerifLineHeightLabel  alloc] initWithLineSpacing:10];
         label.frame = CGRectMake(0, 0, 300, 80);

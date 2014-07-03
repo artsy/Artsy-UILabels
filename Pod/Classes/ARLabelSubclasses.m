@@ -139,34 +139,6 @@ static const CGSize ChevronSize = { 8, 13 };
 
 @end
 
-@implementation ARTitleWithDateLabel
-
-- (void)setTitle:(NSString *)title date:(NSString *)date
-{
-    NSAssert(title, @"Missing title.");
-
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:3];
-
-    NSMutableAttributedString *titleAndDate = [[NSMutableAttributedString alloc] initWithString:title attributes:@{
-        NSParagraphStyleAttributeName: paragraphStyle
-    }];
-
-    if (date.length > 0) {
-        NSString *formattedTitleDate = [@", " stringByAppendingString:date];
-        NSAttributedString *andDate = [[NSAttributedString alloc] initWithString:formattedTitleDate attributes:@{
-             NSFontAttributeName : [UIFont serifFontWithSize:16]
-        }];
-        [titleAndDate appendAttributedString:andDate];
-    }
-
-    self.font = [UIFont serifItalicFontWithSize:16];
-    self.numberOfLines = 0;
-    self.attributedText = titleAndDate;
-}
-
-@end
-
 @interface ARSerifLineHeightLabel()
 
 @end

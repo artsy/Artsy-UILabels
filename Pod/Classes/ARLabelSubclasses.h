@@ -32,19 +32,10 @@
 @interface ARItalicsSerifLabelWithChevron : ARLabelWithChevron
 @end
 
-@interface ARTitleWithDateLabel: ARItalicsSerifLabel
-- (void)setTitle:(NSString *)artworkTitle date:(NSString *)date;
-@end
-
-/// Will convert the text into an attributed string
-/// with the correct line height
-
+/// Will convert the text into an attributed string with the correct line height.
 @interface ARSerifLineHeightLabel : ARSerifLabel
-
 - (instancetype)initWithLineSpacing:(CGFloat)lineHeight;
-
 @property (nonatomic, assign) CGFloat lineHeight;
-
 @end
 
 @interface ARBorderLabel : ARSerifLineHeightLabel
