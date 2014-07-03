@@ -98,6 +98,12 @@ describe(@"label subclasses", ^{
         expect(label).to.haveValidSnapshot();
     });
 
+    it(@"ARSansSerifLabelWithChevron looks right", ^{
+        label = [[ARSansSerifLabelWithChevron alloc] initWithFrame:labelFrame];
+        label.text = @"Hello world";
+        expect(label).to.haveValidSnapshot();
+    });
+
     it(@"ARSansSerifLabel looks right", ^{
         label = [[ARSansSerifLabel alloc] initWithFrame:labelFrame];
         label.text = @"Hello world";

@@ -56,7 +56,6 @@ static const CGSize ChevronSize = { 8, 13 };
 - (void)setup
 {
     [super setup];
-    self.font = [UIFont sansSerifFontWithSize:14];
     self.chevronDelta = 6;
     self.clipsToBounds = NO;
 }
@@ -203,5 +202,21 @@ static const CGFloat ARBorderLabelInset = 10;
 @end
 
 @implementation ARSerifLabelWithChevron
+
+- (void)setup
+{
+    [super setup];
+    self.font = [UIFont serifFontWithSize:self.font.pointSize];
+}
+
+@end
+
+@implementation ARSansSerifLabelWithChevron
+
+- (void)setup
+{
+    [super setup];
+    self.font = [UIFont sansSerifFontWithSize:self.font.pointSize];
+}
 
 @end
