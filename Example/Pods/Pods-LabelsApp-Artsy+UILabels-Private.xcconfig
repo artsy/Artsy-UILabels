@@ -1,5 +1,0 @@
-#include "Pods-LabelsApp-Artsy+UILabels.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Artsy+UILabels" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Artsy+UIColors" "${PODS_ROOT}/Headers/Artsy+UIFonts" "${PODS_ROOT}/Headers/Artsy+UILabels" "${PODS_ROOT}/Headers/EDColor" "${PODS_ROOT}/Headers/EXPMatchers+FBSnapshotTest" "${PODS_ROOT}/Headers/Expecta" "${PODS_ROOT}/Headers/FBSnapshotTestCase" "${PODS_ROOT}/Headers/Specta"
-OTHER_LDFLAGS = -ObjC ${PODS_LABELSAPP_ARTSY_UILABELS_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}

@@ -36,6 +36,11 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>EBGaramond08-Italic.ttf</string>
+		<string>EBGaramond08-Regular.ttf</string>
+		<string>EBGaramond12-Italic.ttf</string>
+		<string>EBGaramond12-Regular.ttf</string>
+		<string>texgyreadventor-regular.ttf</string>
 		<string>AGaramondPro-BoldItalic.otf</string>
 		<string>AGaramondPro-Bold.otf</string>
 		<string>AGaramondPro-Italic.otf</string>
