@@ -1,8 +1,10 @@
 target 'LabelsApp' do
+  pod 'Artsy+UIFonts'
   pod "Artsy+UILabels", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
+  pod 'Artsy+UIFonts'
   pod "Artsy+UILabels", :path => "../"
 
   pod 'Specta'
