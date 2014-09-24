@@ -39,9 +39,6 @@
 /* Begin PBXFileReference section */
 		23ACEE50AF484564879402AE /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28177A775C6F4ABA94F26FF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AC21D12C6CA4E16B9E0DE2A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		3A6ECA0DB59F468BA09E4ECF /* Pods-LabelsApp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabelsApp.xcconfig"; path = "Pods/Pods-LabelsApp.xcconfig"; sourceTree = "<group>"; };
-		5312E2D113C84EEBB6E481DF /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* Artsy+UILabels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Artsy+UILabels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +60,11 @@
 		60FF7AE31954DCB0007DD14C /* CPDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPDAppDelegate.h; sourceTree = "<group>"; };
 		60FF7AE41954DCB0007DD14C /* CPDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPDAppDelegate.m; sourceTree = "<group>"; };
 		60FF7AE61954DCB0007DD14C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7027AE630C47C4E17EE62FBC /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		72FF4D348E0D4A6C87C8FDF8 /* libPods-LabelsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LabelsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B985D795F636C28589D781B5 /* Pods-LabelsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabelsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabelsApp/Pods-LabelsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CF3071BED5DB9F7024B8B39D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D90A3D94B30070E6ABC5759E /* Pods-LabelsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabelsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabelsApp/Pods-LabelsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +101,7 @@
 				60FF7ADA1954DCB0007DD14C /* LabelsApp */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				2AC21D12C6CA4E16B9E0DE2A /* Pods.xcconfig */,
-				5312E2D113C84EEBB6E481DF /* Pods-Tests.xcconfig */,
-				3A6ECA0DB59F468BA09E4ECF /* Pods-LabelsApp.xcconfig */,
+				9C0B63C8A70D39B1C73634F9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +178,17 @@
 				60FF7AE21954DCB0007DD14C /* LabelsApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C0B63C8A70D39B1C73634F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B985D795F636C28589D781B5 /* Pods-LabelsApp.debug.xcconfig */,
+				D90A3D94B30070E6ABC5759E /* Pods-LabelsApp.release.xcconfig */,
+				7027AE630C47C4E17EE62FBC /* Pods-Tests.debug.xcconfig */,
+				CF3071BED5DB9F7024B8B39D /* Pods-Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +303,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2552BFA997FA408C9DAC1E7A /* Copy Pods Resources */ = {
@@ -308,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-LabelsApp-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabelsApp/Pods-LabelsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		604D30A4C96F49A18456575B /* Check Pods Manifest.lock */ = {
@@ -463,7 +473,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5312E2D113C84EEBB6E481DF /* Pods-Tests.xcconfig */;
+			baseConfigurationReference = 7027AE630C47C4E17EE62FBC /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LabelsApp.app/LabelsApp";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -487,7 +497,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5312E2D113C84EEBB6E481DF /* Pods-Tests.xcconfig */;
+			baseConfigurationReference = CF3071BED5DB9F7024B8B39D /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LabelsApp.app/LabelsApp";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -507,7 +517,7 @@
 		};
 		60FF7AFB1954DCB1007DD14C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A6ECA0DB59F468BA09E4ECF /* Pods-LabelsApp.xcconfig */;
+			baseConfigurationReference = B985D795F636C28589D781B5 /* Pods-LabelsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -526,7 +536,7 @@
 		};
 		60FF7AFC1954DCB1007DD14C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A6ECA0DB59F468BA09E4ECF /* Pods-LabelsApp.xcconfig */;
+			baseConfigurationReference = D90A3D94B30070E6ABC5759E /* Pods-LabelsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
