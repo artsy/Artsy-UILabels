@@ -12,19 +12,21 @@
 
 + (NSString *)currencyStringForCents:(NSNumber *)centsNumber
 {
-    NSDecimal cents = [centsNumber decimalValue];
-    NSDecimal cent = [@(100) decimalValue];
-    NSDecimal dollars;
-    NSDecimalDivide(&dollars, &cents, &cent, NSRoundBankers);
+    NSDecimalNumber *dollarsNumber = [NSDecimalNumber decimalNumberWithMantissa:centsNumber.intValue exponent:-2 isNegative:NO];
+    return [self currencyStringForDollars:dollarsNumber];
+}
 
++ (NSString *)currencyStringForDollars:(NSNumber *)dollarsNumber
+{
     static NSNumberFormatter *formatter;
     if (!formatter) {
         formatter = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [formatter setMaximumFractionDigits:0];
+        [formatter setAlwaysShowsDecimalSeparator:NO];
     }
 
-    NSString *currencyString = [formatter stringFromNumber:[NSDecimalNumber decimalNumberWithDecimal:dollars]];
-    return [currencyString substringToIndex:[currencyString length] - 3];
+    return [formatter stringFromNumber:dollarsNumber];
 }
 
 @end
