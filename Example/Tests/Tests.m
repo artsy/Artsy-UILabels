@@ -20,6 +20,10 @@ describe(@"currency", ^{
         expect([NSNumberFormatter currencyStringForCents:@20000]).to.equal(@"$200");
         expect([NSNumberFormatter currencyStringForCents:@4500000]).to.equal(@"$45,000");
 
+        expect([NSNumberFormatter currencyStringForDollars:@1]).to.equal(@"$1");
+        expect([NSNumberFormatter currencyStringForDollars:@200]).to.equal(@"$200");
+        expect([NSNumberFormatter currencyStringForDollars:@20000]).to.equal(@"$20,000");
+        expect([NSNumberFormatter currencyStringForDollars:@4500000]).to.equal(@"$4,500,000");
     });
 });
 

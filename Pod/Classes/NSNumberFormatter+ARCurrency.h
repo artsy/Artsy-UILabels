@@ -9,5 +9,6 @@
 @interface NSNumberFormatter (ARCurrency)
 
 + (NSString *)currencyStringForCents:(NSNumber *)cents;
++ (NSString *)currencyStringForDollars:(NSNumber *)dollars;
 
 @end
