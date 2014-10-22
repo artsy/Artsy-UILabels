@@ -1,5 +1,8 @@
 # Artsy+UILabels CHANGELOG
 
+## 1.3.1
+* Added more specific methods for creating borders
+
 ## 1.3.0
 * Dollar formatting method added
 * Remove string manipulation and unnecessary math
