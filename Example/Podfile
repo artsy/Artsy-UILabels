@@ -3,12 +3,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LabelsApp' do
   pod 'Artsy+OSSUIFonts'
-  pod "Artsy+UILabels", :path => "../"
+  pod "Artsy+UILabels", :path => "../Artsy+UILabels.podspec"
 end
 
 target 'Tests', :exclusive => true do
   pod 'Artsy+OSSUIFonts'
-  pod "Artsy+UILabels", :path => "../"
+  pod "Artsy+UILabels", :path => "../Artsy+UILabels.podspec"
 
   pod 'Specta'
   pod 'Expecta'
