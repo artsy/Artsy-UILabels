@@ -1,5 +1,8 @@
 # Artsy+UILabels CHANGELOG
 
+## 1.4.0
+* Updated for compatibility with Xcode 6
+
 ## 1.3.1
 * Added more specific methods for creating borders
 
