@@ -14,7 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Artsy+OSSUIFonts
-  - Artsy+UILabels (from `../`)
+  - Artsy+UILabels (from `../Artsy+UILabels.podspec`)
   - Expecta
   - EXPMatchers+FBSnapshotTest
   - FBSnapshotTestCase
@@ -22,7 +22,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Artsy+UILabels:
-    :path: ../
+    :path: ../Artsy+UILabels.podspec
 
 SPEC CHECKSUMS:
   Artsy+OSSUIFonts: 45b406bdb7b79dc23ec8e7eeab58a868a147c067
