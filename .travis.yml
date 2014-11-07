@@ -7,6 +7,7 @@ before_script:
   - brew uninstall xctool
   - brew install xctool
 install:
-  - cd Example ; pod update; cd ..xcode_workspace: Example/Artsy+UILabels.xcworkspace
+  - cd Example ; pod update; cd ..
+xcode_workspace: Example/Artsy+UILabels.xcworkspace
 xcode_scheme: LabelsApp
 xcode_sdk: iphonesimulator
