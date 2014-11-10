@@ -1,14 +1,19 @@
 osx_image: xcode61
 language: objective-c
+cache: bundler
+
+env:
+    global:
+        - UPLOAD_IOS_SNAPSHOT_BUCKET_NAME=uilabels-snapshots
+        - secure: "KVOHh1o6sUIoPAZEr6LQr0runOzmq4oOIivNX0kM9PtHP7N0GtXD/ssiSeVim3fDt3jICOrDNfIK3UknIY6j7qlV826Dg0nEvh1dC1yz8E3Q7sVEqL8PZFyGZ4yMRtia3wHYeNbf+PSXSq6oKvRLayEdGVxDaOCUAMh9tF0rkYs="
+        - secure: "aLpa4qiFjIw7zGvp0Hy1+M7gUKYRSFo/2Cs8781TCyu8bbq0EuuAvQyFxOl6WYfyVsesmDqxFCvpICv03EYR/uYUIZH30c60rK3U15iFn2Co3gg1HKsh3EbnlHWlp7JZpZGsh3sX8PXViyJW3J6RNoy6YeU7xpBNlkGFwqQjUSs="
+
 before_install:
-  - gem install cocoapods --no-ri --no-rdoc
+- bundle install
+
 before_script:
-  - export LANG=en_US.UTF-8
-  - brew update
-  - brew uninstall xctool
-  - brew install xctool
-install:
-  - cd Example ; pod update; cd ..
-xcode_workspace: Example/Artsy+UILabels.xcworkspace
-xcode_scheme: LabelsApp
-xcode_sdk: iphonesimulator
+- export LANG=en_US.UTF-8
+- make ci
+
+script:
+- make test
