@@ -10,8 +10,8 @@ target 'Tests', :exclusive => true do
   pod 'Artsy+OSSUIFonts'
   pod "Artsy+UILabels", :path => "../"
 
-  pod 'Specta'
+  pod 'Specta', :git => 'https://github.com/specta/specta.git', :branch => '0.3-wip'
   pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'EXPMatchers+FBSnapshotTest'
+  pod 'FBSnapshotTestCase', :git => 'https://github.com/facebook/ios-snapshot-test-case.git', :commit => 'da3eafa2f914c223cf4804f76226ecdd75392e62'
+  pod 'Expecta+Snapshots'
 end
