@@ -1,5 +1,8 @@
 # Artsy+UILabels CHANGELOG
 
+## Master
+* Inset text to ensure it doesn’t overlap the chevron.
+
 ## 1.3.1
 * Added more specific methods for creating borders
 

@@ -80,6 +80,12 @@ static const CGSize ChevronSize = { 8, 13 };
     }
 }
 
+- (void)drawTextInRect:(CGRect)rect
+{
+    rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(0, 0, 0, ChevronSize.width + 8));
+    [super drawTextInRect:rect];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
