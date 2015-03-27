@@ -80,12 +80,25 @@ static const CGSize ChevronSize = { 8, 13 };
     }
 }
 
+- (void)drawTextInRect:(CGRect)rect
+{
+    rect = UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(0, 0, 0, ChevronSize.width + 8));
+    [super drawTextInRect:rect];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
 
-    CGFloat yPosition = (CGRectGetHeight(self.bounds) / 2) - self.chevronDelta;
-    self.chevron.frame = CGRectMake(self.intrinsicContentSize.width + 8, yPosition, ChevronSize.width, ChevronSize.height);
+    CGSize totalSize = self.bounds.size;
+    CGFloat yPosition = (totalSize.height / 2) - self.chevronDelta;
+    // Default to positioning the chevron immediately after the text.
+    CGFloat chevronWidth = self.intrinsicContentSize.width + 8;
+    // But always cap width before expected start of chevron so that the chevron is never clipped.
+    if (chevronWidth + ChevronSize.width > totalSize.width) {
+        chevronWidth = totalSize.width - ChevronSize.width;
+    }
+    self.chevron.frame = CGRectMake(chevronWidth, yPosition, ChevronSize.width, ChevronSize.height);
 }
 
 - (void)setChevronHidden:(BOOL)chevronHidden

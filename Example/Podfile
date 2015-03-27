@@ -13,5 +13,5 @@ target 'Tests', :exclusive => true do
   pod 'Specta'
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
-  pod 'EXPMatchers+FBSnapshotTest'
+  pod 'Expecta+Snapshots'
 end
