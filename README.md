@@ -12,12 +12,9 @@ To run the example project; clone the repo, and run `pod install` from the Examp
 
 Artsy+UILabels is available through [CocoaPods](http://cocoapods.org), and the [Artsy Specs Repo](https://github.com/artsy/specs). 
 
-To install the Specs repo run:
-
-    pod repo add artsy https://github.com/artsy/Specs.git
-
 To install the pod, add following line to your Podfile:
 
+    source "https://github.com/artsy/Specs.git"
     pod "Artsy+UILabels"
 
 ## Author
