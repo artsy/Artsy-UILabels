@@ -10,23 +10,40 @@
 
 @implementation NSNumberFormatter (ARCurrency)
 
++ (NSNumberFormatter *)dollarsFormatterWithCurrentLocale;
+{
+    static dispatch_once_t onceToken = 0;
+    static NSNumberFormatter *formatter = nil;
+    dispatch_once(&onceToken, ^{
+        formatter = [self dollarsFormatterWithLocale:[NSLocale currentLocale]];
+    });
+    return formatter;
+}
+
++ (NSNumberFormatter *)dollarsFormatterWithLocale:(NSLocale *)locale;
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.locale = locale;
+    formatter.currencyCode = @"USD";
+    formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    formatter.maximumFractionDigits = 0;
+    formatter.alwaysShowsDecimalSeparator = NO;
+    return formatter;
+}
+
+- (NSString *)stringFromCentsNumber:(NSNumber *)centsNumber;
+{
+    return [self stringFromNumber:[NSDecimalNumber decimalNumberWithMantissa:centsNumber.intValue exponent:-2 isNegative:NO]];
+}
+
 + (NSString *)currencyStringForCents:(NSNumber *)centsNumber
 {
-    NSDecimalNumber *dollarsNumber = [NSDecimalNumber decimalNumberWithMantissa:centsNumber.intValue exponent:-2 isNegative:NO];
-    return [self currencyStringForDollars:dollarsNumber];
+    return [[self dollarsFormatterWithCurrentLocale] stringFromCentsNumber:centsNumber];
 }
 
 + (NSString *)currencyStringForDollars:(NSNumber *)dollarsNumber
 {
-    static NSNumberFormatter *formatter;
-    if (!formatter) {
-        formatter = [[NSNumberFormatter alloc] init];
-        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [formatter setMaximumFractionDigits:0];
-        [formatter setAlwaysShowsDecimalSeparator:NO];
-    }
-
-    return [formatter stringFromNumber:dollarsNumber];
+    return [[self dollarsFormatterWithCurrentLocale] stringFromNumber:dollarsNumber];
 }
 
 @end
