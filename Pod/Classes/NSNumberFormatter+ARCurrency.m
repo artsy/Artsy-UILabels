@@ -36,9 +36,9 @@
     return [self stringFromNumber:[NSDecimalNumber decimalNumberWithMantissa:centsNumber.intValue exponent:-2 isNegative:NO]];
 }
 
-+ (NSString *)currencyStringForCents:(NSNumber *)centsNumber
++ (NSString *)currencyStringForCents:(NSNumber *)cents
 {
-    return [[self dollarsFormatterWithCurrentLocale] stringFromCentsNumber:centsNumber];
+    return [[self dollarsFormatterWithCurrentLocale] stringFromCentsNumber:cents];
 }
 
 + (NSString *)currencyStringForDollars:(NSNumber *)dollarsNumber

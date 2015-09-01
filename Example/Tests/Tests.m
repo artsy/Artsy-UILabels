@@ -40,6 +40,20 @@ describe(@"currency", ^{
         formatter = [NSNumberFormatter dollarsFormatterWithLocale:[NSLocale localeWithLocaleIdentifier:@"nl_NL"]];
         expect([formatter stringFromNumber:@4500000]).to.equal(@"US$ 4.500.000");
     });
+
+    describe(@"current locale convenience methods", ^{
+        before(^{
+            formatter = [NSNumberFormatter dollarsFormatterWithLocale:[NSLocale currentLocale]];
+        });
+
+        it(@"formats dollars", ^{
+            expect([formatter stringFromNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForDollars:@4500000]);
+        });
+
+        it(@"formats dollar cents", ^{
+            expect([formatter stringFromCentsNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForCents:@4500000]);
+        });
+    });
 });
 
 describe(@"line drawing", ^{
