@@ -14,16 +14,45 @@
 SpecBegin(LabelSpecs)
 
 describe(@"currency", ^{
-    it(@"gives expected results", ^{
-        expect([NSNumberFormatter currencyStringForCents:@1]).to.equal(@"$0");
-        expect([NSNumberFormatter currencyStringForCents:@200]).to.equal(@"$2");
-        expect([NSNumberFormatter currencyStringForCents:@20000]).to.equal(@"$200");
-        expect([NSNumberFormatter currencyStringForCents:@4500000]).to.equal(@"$45,000");
+    __block NSNumberFormatter *formatter = nil;
 
-        expect([NSNumberFormatter currencyStringForDollars:@1]).to.equal(@"$1");
-        expect([NSNumberFormatter currencyStringForDollars:@200]).to.equal(@"$200");
-        expect([NSNumberFormatter currencyStringForDollars:@20000]).to.equal(@"$20,000");
-        expect([NSNumberFormatter currencyStringForDollars:@4500000]).to.equal(@"$4,500,000");
+    describe(@"in general", ^{
+        before(^{
+            formatter = [NSNumberFormatter dollarsFormatterWithLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+        });
+
+        it(@"formats dollars", ^{
+            expect([formatter stringFromNumber:@1]).to.equal(@"$1");
+            expect([formatter stringFromNumber:@200]).to.equal(@"$200");
+            expect([formatter stringFromNumber:@20000]).to.equal(@"$20,000");
+            expect([formatter stringFromNumber:@4500000]).to.equal(@"$4,500,000");
+        });
+
+        it(@"formats dollar cents", ^{
+            expect([formatter stringFromCentsNumber:@1]).to.equal(@"$0");
+            expect([formatter stringFromCentsNumber:@200]).to.equal(@"$2");
+            expect([formatter stringFromCentsNumber:@20000]).to.equal(@"$200");
+            expect([formatter stringFromCentsNumber:@4500000]).to.equal(@"$45,000");
+        });
+    });
+
+    it(@"respects the locale's grouping separators", ^{
+        formatter = [NSNumberFormatter dollarsFormatterWithLocale:[NSLocale localeWithLocaleIdentifier:@"nl_NL"]];
+        expect([formatter stringFromNumber:@4500000]).to.equal(@"US$ 4.500.000");
+    });
+
+    describe(@"current locale convenience methods", ^{
+        before(^{
+            formatter = [NSNumberFormatter dollarsFormatterWithLocale:[NSLocale currentLocale]];
+        });
+
+        it(@"formats dollars", ^{
+            expect([formatter stringFromNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForDollars:@4500000]);
+        });
+
+        it(@"formats dollar cents", ^{
+            expect([formatter stringFromCentsNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForDollarCents:@4500000]);
+        });
     });
 });
 
