@@ -51,7 +51,7 @@ describe(@"currency", ^{
         });
 
         it(@"formats dollar cents", ^{
-            expect([formatter stringFromCentsNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForCents:@4500000]);
+            expect([formatter stringFromCentsNumber:@4500000]).to.equal([NSNumberFormatter currencyStringForDollarCents:@4500000]);
         });
     });
 });

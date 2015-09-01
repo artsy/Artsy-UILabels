@@ -9,7 +9,7 @@
 @interface NSNumberFormatter (ARCurrency)
 
 // Convenience methods that use the current locale.
-+ (NSString *)currencyStringForCents:(NSNumber *)cents;
++ (NSString *)currencyStringForDollarCents:(NSNumber *)cents;
 + (NSString *)currencyStringForDollars:(NSNumber *)dollars;
 
 /// Returns number formatters that respect the specified locale but always uses dollars.
@@ -18,5 +18,7 @@
 
 /// Divides a number by 100 without loosing precision.
 - (NSString *)stringFromCentsNumber:(NSNumber *)cents;
+
++ (NSString *)currencyStringForCents:(NSNumber *)cents __attribute__((deprecated("Replaced by +[NSNumberFormatter currencyStringForDollarCents:]")));
 
 @end

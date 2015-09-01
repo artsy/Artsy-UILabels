@@ -41,6 +41,11 @@
     return [[self dollarsFormatterWithCurrentLocale] stringFromCentsNumber:cents];
 }
 
++ (NSString *)currencyStringForDollarCents:(NSNumber *)cents;
+{
+    return [[self dollarsFormatterWithCurrentLocale] stringFromCentsNumber:cents];
+}
+
 + (NSString *)currencyStringForDollars:(NSNumber *)dollarsNumber
 {
     return [[self dollarsFormatterWithCurrentLocale] stringFromNumber:dollarsNumber];
