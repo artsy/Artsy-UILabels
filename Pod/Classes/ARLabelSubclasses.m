@@ -9,7 +9,22 @@
 #import "ARLabelSubclasses.h"
 #import "UIView+ARDrawing.h"
 #import "NSNumberFormatter+ARCurrency.h"
+
+#if __has_include(<Artsy_UIColors/UIColor+ArtsyColors.h>)
+#import <Artsy_UIColors/UIColor+ArtsyColors.h>
+#endif
+
+#if __has_include(<Artsy_UIFonts/UIFont+ArtsyFonts.h>)
+#import <Artsy_UIFonts/UIFont+ArtsyFonts.h>
+#endif
+
+#if __has_include(<Artsy_OSSUIFonts/UIFont+OSSArtsyFonts.h>)
+#import <Artsy_OSSUIFonts/UIFont+OSSArtsyFonts.h>
+#endif
+
+#if __has_include(<Artsy+UIColors/UIColor+ArtsyColors.h>)
 #import <Artsy+UIColors/UIColor+ArtsyColors.h>
+#endif
 
 #if __has_include(<Artsy+UIFonts/UIFont+ArtsyFonts.h>)
 #import <Artsy+UIFonts/UIFont+ArtsyFonts.h>
@@ -36,9 +51,9 @@ static const CGSize ChevronSize = { 8, 13 };
 {
     self = [super initWithFrame:frame];
     if (!self) return nil;
-    
+
     [self setup];
-    
+
     return self;
 }
 

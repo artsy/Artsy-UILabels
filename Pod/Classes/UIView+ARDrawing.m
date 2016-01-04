@@ -7,7 +7,13 @@
 //
 
 #import "UIView+ARDrawing.h"
+#if __has_include(<Artsy+UIColors/UIColor+ArtsyColors.h>)
 #import <Artsy+UIColors/UIColor+ArtsyColors.h>
+#endif
+
+#if __has_include(<Artsy_UIFonts/UIFont+ArtsyFonts.h>)
+#import <Artsy_UIColors/UIColor+ArtsyColors.h>
+#endif
 
 @implementation UIView (ARDrawing)
 
@@ -100,7 +106,7 @@
 {
     CALayer* layer = [self.layer valueForKey:key];
     if (layer) [layer removeFromSuperlayer];
-    
+
     CALayer *newLayer = [self layerForMarginAtY:yLocation withColor:color dotted:dotted];
     [self.layer addSublayer:newLayer];
     [self.layer setValue:newLayer forKey:key];
@@ -112,7 +118,7 @@
     [shapeLayer setStrokeColor:[color CGColor]];
     [shapeLayer setLineWidth:1];
     [shapeLayer setLineJoin:kCALineJoinRound];
-    
+
     if (dotted) [shapeLayer setLineDashPattern: @[ @1, @1 ]];
     [shapeLayer setAnchorPoint:CGPointZero];
 
