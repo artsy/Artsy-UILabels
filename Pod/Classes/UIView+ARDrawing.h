@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Artsy. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface UIView (ARDrawing)
 
 // DOTTED BORDERS

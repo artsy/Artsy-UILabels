@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Artsy. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface NSNumberFormatter (ARCurrency)
 
 // Convenience methods that use the current locale.

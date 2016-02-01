@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Artsy. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface ARLabel : UILabel
 @end
 
