@@ -11,7 +11,7 @@
 #import <Artsy+UIColors/UIColor+ArtsyColors.h>
 #endif
 
-#if __has_include(<Artsy_UIFonts/UIFont+ArtsyFonts.h>)
+#if __has_include(<Artsy_UIColors/UIColor+ArtsyColors.h>)
 #import <Artsy_UIColors/UIColor+ArtsyColors.h>
 #endif
 
