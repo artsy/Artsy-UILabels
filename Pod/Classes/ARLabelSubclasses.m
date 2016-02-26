@@ -254,4 +254,9 @@ static const CGFloat ARBorderLabelInset = 10;
     self.font = [UIFont sansSerifFontWithSize:self.font.pointSize];
 }
 
+- (void)setText:(NSString *)text
+{
+    [super setText:[text uppercaseString]];
+}
+
 @end
