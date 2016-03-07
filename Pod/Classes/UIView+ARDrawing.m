@@ -1,11 +1,3 @@
-//
-//  UIView+ARDrawing.m
-//  Artsy
-//
-//  Created by Dustin Barker on 11/11/13.
-//  Copyright (c) 2013 Artsy. All rights reserved.
-//
-
 #import "UIView+ARDrawing.h"
 #if __has_include(<Artsy+UIColors/UIColor+ArtsyColors.h>)
 #import <Artsy+UIColors/UIColor+ArtsyColors.h>
@@ -19,7 +11,7 @@
 
 + (UIColor *)defaultBorderColor
 {
-    return [UIColor artsyLightGrey];
+    return [UIColor artsyGrayLight];
 }
 
 // Dotted border methods

@@ -8,7 +8,7 @@
 
 #import <Artsy+UILabels/NSNumberFormatter+ARCurrency.h>
 #import <Artsy+UILabels/UIView+ARDrawing.h>
-#import <Artsy+UILabels/ARLabelSubclasses.h>
+#import <Artsy+UILabels/Artsy+UILabels.h>
 
 
 SpecBegin(LabelSpecs)

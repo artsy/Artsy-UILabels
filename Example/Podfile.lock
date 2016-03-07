@@ -1,10 +1,8 @@
 PODS:
   - Artsy+OSSUIFonts (1.1.0)
-  - Artsy+UIColors (1.0.0):
-    - EDColor (~> 0.4)
-  - Artsy+UILabels (1.3.2):
+  - Artsy+UIColors (3.0.0)
+  - Artsy+UILabels (2.0.0):
     - Artsy+UIColors
-  - EDColor (0.4.0)
   - Expecta (1.0.2)
   - Expecta+Snapshots (1.3.4):
     - Expecta (~> 1.0)
@@ -22,16 +20,15 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Artsy+UILabels:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Artsy+OSSUIFonts: e538d656b33ee7b1c66a97f57923f37ce565b3a8
-  Artsy+UIColors: 7a4c987885a8d8da3e22672a3232761f929dd2b6
-  Artsy+UILabels: 0eec510874d00412a2084b7c37aad942b4dcd7b6
-  EDColor: 89d19a013279a5604d61650721c15f20fefaaf00
+  Artsy+UIColors: 4bcad6457b985ebbf84b3c96a5cd58c48d937778
+  Artsy+UILabels: 12982f85da965bddc6ceb414e071e38411f0b2aa
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

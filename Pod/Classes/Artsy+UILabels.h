@@ -1,11 +1,3 @@
-//
-//  ARLabelSubclasses.h
-//  Artsy
-//
-//  Created by Orta Therox on 17/11/2012.
-//  Copyright (c) 2012 Artsy. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 @interface ARLabel : UILabel

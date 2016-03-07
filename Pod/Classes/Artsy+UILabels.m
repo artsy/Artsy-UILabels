@@ -1,12 +1,4 @@
-//
-//  ARLabelSubclasses.m
-//  Artsy
-//
-//  Created by Orta Therox on 17/11/2012.
-//  Copyright (c) 2012 Artsy. All rights reserved.
-//
-
-#import "ARLabelSubclasses.h"
+#import "Artsy+UILabels.h"
 #import "UIView+ARDrawing.h"
 #import "NSNumberFormatter+ARCurrency.h"
 
@@ -65,7 +57,10 @@ static const CGSize ChevronSize = { 8, 13 };
 - (void)setup
 {
     self.numberOfLines = 0;
-    self.preferredMaxLayoutWidth = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 728 : 280;
+
+    CGFloat commonMargin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 40 : 20;
+    self.preferredMaxLayoutWidth = CGRectGetWidth([[UIScreen mainScreen] applicationFrame]) - (commonMargin * 2);
+
     self.backgroundColor = [UIColor whiteColor];
     self.opaque = YES;
 }
@@ -87,7 +82,7 @@ static const CGSize ChevronSize = { 8, 13 };
     [super setText:text];
 
     if (!self.chevron) {
-        NSString *path = [[NSBundle bundleForClass:self.class] pathForResource:@"Chevron_Gray" ofType:@"png"];
+        NSString *path = [[NSBundle bundleForClass:self.class] pathForResource:@"Chevron_Black" ofType:@"png"];
         UIImage *chevronImage = [UIImage imageWithContentsOfFile:path];
         UIImageView *chevron = [[UIImageView alloc] initWithImage:chevronImage];
         [self addSubview:chevron];
