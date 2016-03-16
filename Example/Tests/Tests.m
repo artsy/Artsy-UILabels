@@ -168,6 +168,21 @@ describe(@"label subclasses", ^{
         label.text = @"Hello there, this is some pretty long text ey? Maybe it'll wrap.";
         expect(label).to.haveValidSnapshot();
     });
+
+    describe(@"preffered max layout width", ^{
+        it(@"sets it to device width - margin on init", ^{
+            label = [[ARLabel alloc] init];
+            expect(label.preferredMaxLayoutWidth).to.equal(280);
+        });
+
+        it(@"sets it to the superview width - margin on when added to another view", ^{
+            label = [[ARLabel alloc] init];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 80)];
+            [view addSubview:label];
+            expect(label.preferredMaxLayoutWidth).to.equal(360);
+        });
+    });
+
 });
 
 
