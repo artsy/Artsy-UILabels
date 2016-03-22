@@ -169,16 +169,19 @@ describe(@"label subclasses", ^{
         expect(label).to.haveValidSnapshot();
     });
 
-    describe(@"preffered max layout width", ^{
+    describe(@"preferred max layout width", ^{
         it(@"sets it to device width - margin on init", ^{
             label = [[ARLabel alloc] init];
             expect(label.preferredMaxLayoutWidth).to.equal(280);
         });
 
-        it(@"sets it to the superview width - margin on when added to another view", ^{
-            label = [[ARLabel alloc] init];
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 80)];
+        it(@"sets it based on the layed out width - margin", ^{
+            label = [[ARLabel alloc] initWithFrame:CGRectZero];
+            label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
             [view addSubview:label];
+            view.frame = CGRectMake(0, 0, 400, 80);
+            [label layoutIfNeeded];
             expect(label.preferredMaxLayoutWidth).to.equal(360);
         });
     });
