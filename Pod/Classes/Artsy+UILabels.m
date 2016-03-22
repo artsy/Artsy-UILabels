@@ -65,11 +65,11 @@ static const CGSize ChevronSize = { 8, 13 };
     self.opaque = YES;
 }
 
-- (void)didMoveToSuperview
+- (void)layoutSubviews;
 {
-    [super didMoveToSuperview];
-    CGFloat commonMargin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 40 : 20;
-    self.preferredMaxLayoutWidth = CGRectGetWidth(self.superview.bounds) - (commonMargin * 2);
+  CGFloat commonMargin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 40 : 20;
+  self.preferredMaxLayoutWidth = CGRectGetWidth(self.bounds) - (commonMargin * 2);
+  [super layoutSubviews];
 }
 
 @end
