@@ -2,12 +2,14 @@ source 'https://github.com/artsy/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LabelsApp' do
-  pod 'Artsy+OSSUIFonts'
+  pod 'Artsy+UIFonts', :git => "https://github.com/artsy/Artsy-OSSUIFonts.git"
+
   pod "Artsy+UILabels", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
-  pod 'Artsy+OSSUIFonts'
+  pod 'Artsy+UIFonts', :git => "https://github.com/artsy/Artsy-OSSUIFonts.git"
+
   pod "Artsy+UILabels", :path => "../"
 
   pod 'Specta'
