@@ -57,19 +57,8 @@ static const CGSize ChevronSize = { 8, 13 };
 - (void)setup
 {
     self.numberOfLines = 0;
-
-    CGFloat commonMargin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 40 : 20;
-    self.preferredMaxLayoutWidth = CGRectGetWidth([[UIScreen mainScreen] applicationFrame]) - (commonMargin * 2);
-
     self.backgroundColor = [UIColor whiteColor];
     self.opaque = YES;
-}
-
-- (void)didMoveToSuperview
-{
-    [super didMoveToSuperview];
-    CGFloat commonMargin = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 40 : 20;
-    self.preferredMaxLayoutWidth = CGRectGetWidth(self.superview.bounds) - (commonMargin * 2);
 }
 
 @end
