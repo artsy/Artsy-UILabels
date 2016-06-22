@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Artsy+UILabels"
-  s.version          = "2.0.2"
+  s.version          = "2.1.0"
   s.summary          = "UILabels subclasses and related categories."
   s.homepage         = "https://github.com/artsy/Artsy-UILabels"
   s.license          = 'MIT'
@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/artsy/Artsy-UILabels.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/artsyopensource'
 
-  s.platform     = :ios, '7.0'
+  s.ios.deployment_target = '7.0'
+  s.tvos.deployment_target = '9.0'
 
   s.source_files = 'Pod/Classes'
   s.resources = 'Pod/Assets/*.png'

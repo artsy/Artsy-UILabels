@@ -1,5 +1,9 @@
 # Artsy+UILabels CHANGELOG
 
+## 2.1.0
+
+tvOS added
+
 ## 1.3.2
 * Ensure dollar amounts always format with the dollar sign irrespective of the user’s current locale preference.
 * Inset text to ensure it doesn’t overlap the chevron.
