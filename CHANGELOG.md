@@ -1,5 +1,9 @@
 # Artsy+UILabels CHANGELOG
 
+## 2.1.1
+
+* Uses OSS font pod for non-Artsy staff.
+
 ## 2.1.0
 
 tvOS added
