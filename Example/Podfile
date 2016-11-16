@@ -7,7 +7,7 @@ target 'LabelsApp' do
   pod "Artsy+UILabels", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod 'Artsy+UIFonts', :git => "https://github.com/artsy/Artsy-OSSUIFonts.git"
 
   pod "Artsy+UILabels", :path => "../"
