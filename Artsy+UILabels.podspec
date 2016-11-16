@@ -16,5 +16,9 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   s.dependency 'Artsy+UIColors', '~> 3.0'
-  s.dependency 'Artsy+UIFonts'
+  if ENV['ARTSY_STAFF_MEMBER'] != nil || ENV['CI'] != nil
+    s.dependency 'Artsy+UIFonts'
+  else
+    s.dependency 'Artsy+OSSUIFonts'
+  end
 end
