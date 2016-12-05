@@ -4,14 +4,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
 target 'LabelsApp' do
-  pod 'Artsy+UIFonts', :git => "https://github.com/artsy/Artsy-OSSUIFonts.git"
-
   pod "Artsy+UILabels", :path => "../"
 end
 
 target 'Tests' do
-  pod 'Artsy+UIFonts', :git => "https://github.com/artsy/Artsy-OSSUIFonts.git"
-
   pod "Artsy+UILabels", :path => "../"
 
   pod 'Specta'

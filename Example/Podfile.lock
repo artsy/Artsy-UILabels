@@ -1,6 +1,6 @@
 PODS:
   - Artsy+UIColors (3.0.0)
-  - Artsy+UIFonts (2.0.0)
+  - Artsy+UIFonts (2.0.1)
   - Artsy+UILabels (2.1.1):
     - Artsy+UIColors (~> 3.0)
     - Artsy+UIFonts
@@ -12,7 +12,6 @@ PODS:
   - Specta (1.0.3)
 
 DEPENDENCIES:
-  - Artsy+UIFonts (from `https://github.com/artsy/Artsy-OSSUIFonts.git`)
   - Artsy+UILabels (from `../`)
   - Expecta
   - Expecta+Snapshots
@@ -20,25 +19,18 @@ DEPENDENCIES:
   - Specta
 
 EXTERNAL SOURCES:
-  Artsy+UIFonts:
-    :git: https://github.com/artsy/Artsy-OSSUIFonts.git
   Artsy+UILabels:
     :path: "../"
 
-CHECKOUT OPTIONS:
-  Artsy+UIFonts:
-    :commit: e8bd95cae1b68dc9afdd748bbef0da7c2ac269cf
-    :git: https://github.com/artsy/Artsy-OSSUIFonts.git
-
 SPEC CHECKSUMS:
   Artsy+UIColors: 4bcad6457b985ebbf84b3c96a5cd58c48d937778
-  Artsy+UIFonts: b1c53a1f9998bfce96ef1b544191f846e7ed1b0e
+  Artsy+UIFonts: 8aa300da21f23da5e94415fd4cab203d7a47d6d7
   Artsy+UILabels: add04eff945dde274ef1862eb61fbfe09583ef4d
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
-PODFILE CHECKSUM: 715e8be85727120ad6f5b5feaca0fcc2ee79366c
+PODFILE CHECKSUM: 17ab1a5b65a3ec0b42f59ace3120d5a29f014b9c
 
 COCOAPODS: 1.1.1
