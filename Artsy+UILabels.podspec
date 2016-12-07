@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Artsy+UILabels"
-  s.version          = "2.1.1"
+  s.version          = "2.1.2"
   s.summary          = "UILabels subclasses and related categories."
   s.homepage         = "https://github.com/artsy/Artsy-UILabels"
   s.license          = 'MIT'

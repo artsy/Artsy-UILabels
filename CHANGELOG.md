@@ -1,5 +1,9 @@
 # Artsy+UILabels CHANGELOG
 
+## 2.1.2
+
+* Fixes header import path for OSS users.
+
 ## 2.1.1
 
 * Uses OSS font pod for non-Artsy staff.
