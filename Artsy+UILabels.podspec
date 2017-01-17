@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Artsy+UILabels"
-  s.version          = "2.1.2"
+  s.version          = "2.2.0"
   s.summary          = "UILabels subclasses and related categories."
   s.homepage         = "https://github.com/artsy/Artsy-UILabels"
   s.license          = 'MIT'
@@ -16,9 +16,5 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   s.dependency 'Artsy+UIColors', '~> 3.0'
-  if ENV['ARTSY_STAFF_MEMBER'] != nil || ENV['CI'] != nil
-    s.dependency 'Artsy+UIFonts'
-  else
-    s.dependency 'Artsy+OSSUIFonts'
-  end
+  s.dependency 'Artsy+UIFonts'
 end
